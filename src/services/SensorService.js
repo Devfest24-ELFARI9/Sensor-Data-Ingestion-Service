@@ -14,10 +14,20 @@ const processSensorData = async (data, conditions) => {
     await alertService.sendAlert(alertMessage);
   }
 
+
   // Publish to the sensor-data queue
   const queue = 'sensor-data';
+  const queue2 = 'power_consumption';
+
+
   await sendMessage(queue, JSON.stringify(data));
   console.log('Sensor data sent to queue:', data);
+
+  if (data.power_consumption !== undefined && data.power_consumption !== null) {
+    await sendMessage(queue2, JSON.stringify(data.power_consumption));
+    console.log('Energy data sent to queue:', data.power_consumption);
+  }
+  
 };
 
 
