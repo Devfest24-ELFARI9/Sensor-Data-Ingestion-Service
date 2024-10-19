@@ -9,7 +9,7 @@ const subscribeToWebhook = async () => {
     "welding_robot_006"
   ];
 
-  const callback_url = process.env.NGROK_URL;//TODO : make it in env
+  const callback_url = process.env.NGROK_URL ?? "https://ee68-41-220-146-91.ngrok-free.app/api/sensor-data/"
 
   for (const machine_id of machines) {
     try {
