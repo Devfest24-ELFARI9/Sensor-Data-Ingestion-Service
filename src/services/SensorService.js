@@ -4,13 +4,41 @@ const checkConditions = require('../utils/checkConditions');
 const alertService = require('./alertService');
 
 const processSensorData = async (data, conditions) => {
-  if (checkConditions(data, conditions)) {
-    const alertMessage = {
-      machineId: data.machineId,
-      type: data.type, // TODO: define the type of alerts in an external file
-      value: data.value,
-      timestamp: data.timestamp,
-    };
+  const alerts = [];
+  
+  // Loop through each metric in the data and check against conditions
+  for (const [metric, value] of Object.entries(data)) {
+    if (conditions[metric]) {
+      const { threshold, operator } = conditions[metric];
+      switch (operator) {
+        case '>':
+          if (value > threshold) {
+            alerts.push({ machine_id: data.machine_id, type: metric, value, timestamp: data.timestamp });
+          }
+          break;
+        case '<':
+          if (value < threshold) {
+            alerts.push({ machine_id: data.machine_id, type: metric, value, timestamp: data.timestamp });
+          }
+          break;
+        case '>=':
+          if (value >= threshold) {
+            alerts.push({ machine_id: data.machine_id, type: metric, value, timestamp: data.timestamp });
+          }
+          break;
+        case '<=':
+          if (value <= threshold) {
+            alerts.push({ machine_id: data.machine_id, type: metric, value, timestamp: data.timestamp });
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }
+
+  // Send alerts if any
+  for (const alertMessage of alerts) {
     await alertService.sendAlert(alertMessage);
   }
 

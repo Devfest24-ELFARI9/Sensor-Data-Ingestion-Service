@@ -12,4 +12,4 @@ const sendAlert = async (alertMessage) => {
   }
 };
 
-module.exports = sendAlert;
+module.exports = {sendAlert};

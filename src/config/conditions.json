@@ -1,0 +1,67 @@
+{
+    "welding_robot_006": {
+      "weld_temperature": { "threshold": 1700, "operator": ">", "alarm": true },
+      "weld_temperature_lower": { "threshold": 1500, "operator": "<", "alarm": true },
+      "weld_current": { "threshold": 180, "operator": ">", "alarm": true },
+      "weld_current_lower": { "threshold": 120, "operator": "<", "alarm": true },
+      "weld_voltage": { "threshold": 35, "operator": ">", "alarm": true },
+      "weld_voltage_lower": { "threshold": 25, "operator": "<", "alarm": true },
+      "weld_time": { "threshold": 600, "operator": ">", "alarm": true },
+      "weld_time_lower": { "threshold": 400, "operator": "<", "alarm": true },
+      "pressure_applied": { "threshold": 1200, "operator": ">", "alarm": true },
+      "pressure_applied_lower": { "threshold": 800, "operator": "<", "alarm": true },
+      "vibration_level": { "threshold": 0.5, "operator": ">", "maintenance": true },
+      "power_consumption": { "threshold": 5, "operator": ">", "alarm": true }
+    },
+    "stamping_press_001": {
+      "force_applied": { "threshold": 600, "operator": ">", "alarm": true },
+      "force_applied_lower": { "threshold": 400, "operator": "<", "alarm": true },
+      "cycle_time": { "threshold": 15, "operator": ">", "alarm": true },
+      "cycle_time_lower": { "threshold": 10, "operator": "<", "alarm": true },
+      "press_temperature": { "threshold": 90, "operator": ">", "alarm": true },
+      "vibration_level": { "threshold": 1, "operator": ">", "maintenance": true },
+      "oil_pressure": { "threshold": 2, "operator": "<", "alarm": true },
+      "die_alignment": { "condition": "misaligned", "maintenance": true },
+      "noise_level": { "threshold": 90, "operator": ">", "alarm": true },
+      "lubrication_flow_rate": { "threshold": 0.5, "operator": "<", "maintenance": true }
+    },
+    "painting_robot_002": {
+      "spray_pressure": { "threshold": 4, "operator": ">", "alarm": true },
+      "spray_pressure_lower": { "threshold": 3, "operator": "<", "alarm": true },
+      "paint_thickness": { "threshold": 150, "operator": ">", "alarm": true },
+      "paint_thickness_lower": { "threshold": 100, "operator": "<", "alarm": true },
+      "temperature": { "threshold": 30, "operator": ">", "alarm": true },
+      "temperature_lower": { "threshold": 20, "operator": "<", "alarm": true },
+      "humidity": { "threshold": 70, "operator": ">", "alarm": true },
+      "humidity_lower": { "threshold": 40, "operator": "<", "alarm": true },
+      "paint_flow_rate": { "threshold": 5, "operator": ">", "alarm": true },
+      "paint_flow_rate_lower": { "threshold": 3, "operator": "<", "alarm": true },
+      "atomizer_speed": { "threshold": 22000, "operator": ">", "maintenance": true },
+      "atomizer_speed_lower": { "threshold": 18000, "operator": "<", "maintenance": true },
+      "solvent_concentration": { "threshold": 10, "operator": ">", "alarm": true }
+    },
+    "agv_003": {
+      "battery_level": { "threshold": 20, "operator": "<", "maintenance": true },
+      "load_weight": { "threshold": 600, "operator": ">", "alarm": true },
+      "speed": { "threshold": 2, "operator": ">", "alarm": true },
+      "speed_lower": { "threshold": 0.5, "operator": "<", "alarm": true },
+      "vibration_level": { "threshold": 0.5, "operator": ">", "maintenance": true },
+      "temperature": { "threshold": 45, "operator": ">", "alarm": true }
+    },
+    "cnc_milling_004": {
+      "spindle_speed": { "threshold": 13000, "operator": ">", "alarm": true },
+      "spindle_speed_lower": { "threshold": 11000, "operator": "<", "alarm": true },
+      "tool_wear_level": { "threshold": 60, "operator": ">", "maintenance": true },
+      "vibration_level": { "threshold": 2, "operator": ">", "maintenance": true },
+      "coolant_flow_rate": { "threshold": 0.6, "operator": "<", "alarm": true },
+      "temperature": { "threshold": 60, "operator": ">", "alarm": true }
+    },
+    "leak_test_005": {
+      "test_pressure": { "threshold": 6, "operator": ">", "alarm": true },
+      "test_pressure_lower": { "threshold": 4, "operator": "<", "alarm": true },
+      "pressure_drop": { "threshold": 0.1, "operator": ">", "alarm": true },
+      "leak_rate": { "threshold": 0, "operator": ">", "alarm": true },
+      "seal_condition": { "condition": ["warning", "fail"], "maintenance": true }
+    }
+  }
+  
